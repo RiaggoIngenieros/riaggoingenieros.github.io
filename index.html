@@ -1,234 +1,462 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Riaggo Ingenieros | Proyectos e Instalaciones</title>
 
+    <meta name="description"
+        content="Riaggo Ingenieros. Desarrollo de proyectos ejecutivos eléctricos, hidráulicos y sanitarios. Instalaciones eléctricas, hidrosanitarias, paneles solares y equipos hidráulicos.">
+
     <style>
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f5f7fa;
             line-height: 1.6;
-            color: #333;
-            background: #f4f6f8;
         }
 
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
         header {
-            background: #0b1f33;
-            color: white;
-            padding: 20px 8%;
+            background: white;
+            height: 90px;
+            padding: 10px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
+            height: 70px;
+            width: auto;
         }
 
-        .logo span {
-            color: #00a8e8;
+        nav {
+            display: flex;
+            gap: 25px;
         }
 
         nav a {
-            color: white;
+            color: #123f8a;
             text-decoration: none;
-            margin-left: 20px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #00a8e8;
+            color: #0b75c9;
         }
 
+
+        /* =========================
+           PORTADA
+        ========================= */
+
         .hero {
-            background: linear-gradient(rgba(5, 25, 45, 0.85),
-                        rgba(5, 25, 45, 0.85)),
-                        url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80");
+
+            min-height: 620px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(5, 31, 65, 0.88),
+                    rgba(5, 31, 65, 0.88)
+                ),
+                url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1800&q=80");
 
             background-size: cover;
+
             background-position: center;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
+        }
+
+        .hero-contenido {
+            max-width: 900px;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 58px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: normal;
             margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 22px;
-            max-width: 800px;
-            margin: auto;
+            font-size: 21px;
+            margin-bottom: 30px;
         }
 
         .boton {
             display: inline-block;
-            margin-top: 30px;
-            padding: 14px 28px;
-            background: #00a8e8;
+            padding: 14px 30px;
+            background: #0b75c9;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .boton:hover {
-            background: #0086ba;
+            background: #095b9d;
+            transform: translateY(-2px);
         }
 
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
         section {
-            padding: 70px 8%;
+            padding: 80px 7%;
         }
 
         .titulo {
             text-align: center;
-            margin-bottom: 45px;
+            margin-bottom: 50px;
         }
 
         .titulo h2 {
-            font-size: 34px;
-            color: #0b1f33;
+            color: #123f8a;
+            font-size: 38px;
+            margin-bottom: 10px;
         }
 
         .titulo p {
-            margin-top: 10px;
             color: #666;
+            font-size: 18px;
         }
 
+
+        /* =========================
+           SERVICIOS
+        ========================= */
+
         .servicios {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
             gap: 25px;
         }
 
         .servicio {
+
             background: white;
-            padding: 30px;
+
+            padding: 35px 25px;
+
             text-align: center;
+
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
         }
 
-        .servicio .icono {
-            font-size: 45px;
+        .servicio:hover {
+            transform: translateY(-7px);
+        }
+
+        .icono {
+            font-size: 50px;
             margin-bottom: 15px;
         }
 
         .servicio h3 {
-            color: #0b1f33;
-            margin-bottom: 10px;
+            color: #123f8a;
+            margin-bottom: 12px;
+            font-size: 21px;
         }
 
-        .nosotros {
+        .servicio p {
+            color: #555;
+        }
+
+
+        /* =========================
+           NOSOTROS
+        ========================= */
+
+        #nosotros {
             background: white;
-            text-align: center;
         }
 
-        .nosotros p {
-            max-width: 900px;
+        .nosotros-contenido {
+            max-width: 950px;
             margin: auto;
-            font-size: 18px;
-        }
-
-        .contacto {
-            background: #0b1f33;
-            color: white;
             text-align: center;
         }
 
-        .contacto h2 {
-            font-size: 34px;
+        .nosotros-contenido p {
+            font-size: 19px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+
+        /* =========================
+           PROYECTOS
+        ========================= */
+
+        .proyectos {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+        }
+
+        .proyecto {
+
+            background: white;
+
+            min-height: 220px;
+
+            border-radius: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .proyecto h3 {
+            color: #123f8a;
+        }
+
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        #contacto {
+
+            background:
+                linear-gradient(
+                    rgba(5,31,65,0.95),
+                    rgba(5,31,65,0.95)
+                );
+
+            color: white;
+
+            text-align: center;
+        }
+
+        #contacto h2 {
+            font-size: 38px;
             margin-bottom: 20px;
         }
 
-        .contacto p {
-            font-size: 18px;
+        #contacto p {
+            font-size: 19px;
             margin: 8px;
         }
 
-        footer {
-            background: #061321;
-            color: #ccc;
-            text-align: center;
-            padding: 20px;
+        .contacto-botones {
+            margin-top: 30px;
         }
 
-        @media (max-width: 700px) {
+
+        /* =========================
+           PIE DE PAGINA
+        ========================= */
+
+        footer {
+
+            background: #061a2d;
+
+            color: #ccc;
+
+            text-align: center;
+
+            padding: 25px 10px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+        /* =========================
+           TELEFONOS
+        ========================= */
+
+        @media (max-width: 750px) {
 
             header {
-                justify-content: center;
-                text-align: center;
+                height: auto;
+                padding: 15px;
+                flex-direction: column;
+            }
+
+            .logo {
+                height: 65px;
+                margin-bottom: 10px;
             }
 
             nav {
-                margin-top: 15px;
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             nav a {
-                margin: 5px 8px;
-                display: inline-block;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 560px;
             }
 
             .hero h1 {
-                font-size: 36px;
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
             }
 
             .hero p {
                 font-size: 18px;
             }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .titulo h2 {
+                font-size: 31px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- ENCABEZADO -->
+
+    <!-- =========================
+         ENCABEZADO
+    ========================= -->
+
     <header>
 
-        <div class="logo">
-            RIAGGO<span> INGENIEROS</span>
-        </div>
+        <img
+            src="logo.png"
+            alt="Riaggo Ingenieros"
+            class="logo"
+        >
 
         <nav>
+
             <a href="#inicio">Inicio</a>
+
             <a href="#servicios">Servicios</a>
+
             <a href="#nosotros">Nosotros</a>
+
+            <a href="#proyectos">Proyectos</a>
+
             <a href="#contacto">Contacto</a>
+
         </nav>
 
     </header>
 
 
-    <!-- PORTADA -->
+
+    <!-- =========================
+         PORTADA
+    ========================= -->
+
     <section class="hero" id="inicio">
 
-        <h1>RIAGGO INGENIEROS</h1>
+        <div class="hero-contenido">
 
-        <p>
-            Desarrollo de Proyectos Ejecutivos
-            Eléctricos, Hidráulicos y Sanitarios
-        </p>
+            <h1>RIAGGO INGENIEROS</h1>
 
-        <a href="#contacto" class="boton">
-            SOLICITAR COTIZACIÓN
-        </a>
+            <h2>
+                Desarrollo de Proyectos Ejecutivos
+            </h2>
+
+            <p>
+                Soluciones profesionales en ingeniería
+                eléctrica, hidráulica y sanitaria.
+            </p>
+
+            <a
+                href="#contacto"
+                class="boton"
+            >
+                SOLICITAR COTIZACIÓN
+            </a>
+
+        </div>
 
     </section>
 
 
-    <!-- SERVICIOS -->
+
+    <!-- =========================
+         SERVICIOS
+    ========================= -->
+
     <section id="servicios">
 
         <div class="titulo">
@@ -236,7 +464,7 @@
             <h2>Nuestros Servicios</h2>
 
             <p>
-                Soluciones profesionales de ingeniería e instalaciones
+                Soluciones especializadas para sus proyectos
             </p>
 
         </div>
@@ -249,49 +477,77 @@
 
                 <div class="icono">⚡</div>
 
-                <h3>Instalaciones Eléctricas</h3>
+                <h3>
+                    Instalaciones Eléctricas
+                </h3>
 
                 <p>
-                    Diseño y ejecución de instalaciones eléctricas
-                    en media y baja tensión.
+                    Especialistas en instalaciones eléctricas
+                    de media y baja tensión.
                 </p>
 
             </div>
+
 
 
             <div class="servicio">
 
                 <div class="icono">💧</div>
 
-                <h3>Instalaciones Hidrosanitarias</h3>
+                <h3>
+                    Instalaciones Hidráulicas
+                </h3>
 
                 <p>
-                    Diseño y desarrollo de instalaciones hidráulicas
-                    y sanitarias para proyectos.
+                    Diseño y desarrollo de instalaciones
+                    hidráulicas para diferentes proyectos.
                 </p>
 
             </div>
+
+
+
+            <div class="servicio">
+
+                <div class="icono">🚿</div>
+
+                <h3>
+                    Instalaciones Sanitarias
+                </h3>
+
+                <p>
+                    Soluciones profesionales para sistemas
+                    sanitarios e instalaciones hidrosanitarias.
+                </p>
+
+            </div>
+
 
 
             <div class="servicio">
 
                 <div class="icono">☀️</div>
 
-                <h3>Paneles Solares</h3>
+                <h3>
+                    Paneles Solares
+                </h3>
 
                 <p>
-                    Instalación y soluciones de energía solar
-                    para proyectos residenciales y comerciales.
+                    Instalación y soluciones de energía
+                    solar para proyectos residenciales y comerciales.
                 </p>
 
             </div>
+
 
 
             <div class="servicio">
 
                 <div class="icono">🔧</div>
 
-                <h3>Equipos Hidráulicos</h3>
+                <h3>
+                    Equipos Hidráulicos
+                </h3>
 
                 <p>
                     Venta y suministro de equipos hidráulicos
@@ -301,15 +557,18 @@
             </div>
 
 
+
             <div class="servicio">
 
                 <div class="icono">📐</div>
 
-                <h3>Proyectos Ejecutivos</h3>
+                <h3>
+                    Proyectos Ejecutivos
+                </h3>
 
                 <p>
-                    Desarrollo de proyectos ejecutivos eléctricos,
-                    hidráulicos y sanitarios.
+                    Desarrollo de proyectos ejecutivos
+                    eléctricos, hidráulicos y sanitarios.
                 </p>
 
             </div>
@@ -320,64 +579,175 @@
     </section>
 
 
-    <!-- NOSOTROS -->
-    <section class="nosotros" id="nosotros">
+
+    <!-- =========================
+         NOSOTROS
+    ========================= -->
+
+    <section id="nosotros">
 
         <div class="titulo">
 
             <h2>Riaggo Ingenieros</h2>
 
+            <p>
+                Ingeniería para proyectos que requieren soluciones profesionales
+            </p>
+
         </div>
 
-        <p>
-            Somos una empresa especializada en el desarrollo de
-            proyectos ejecutivos e instalaciones para diferentes
-            necesidades de ingeniería.
-        </p>
 
-        <br>
+        <div class="nosotros-contenido">
 
-        <p>
-            Nuestra especialidad comprende instalaciones eléctricas
-            en media y baja tensión, instalaciones hidrosanitarias,
-            sistemas de paneles solares y suministro de equipos
-            hidráulicos.
-        </p>
+            <p>
+                Riaggo Ingenieros desarrolla proyectos ejecutivos
+                especializados en instalaciones eléctricas,
+                hidráulicas y sanitarias.
+            </p>
+
+            <p>
+                Nuestra experiencia comprende instalaciones
+                eléctricas en media y baja tensión, instalaciones
+                hidrosanitarias, sistemas de paneles solares y
+                suministro de equipos hidráulicos.
+            </p>
+
+            <p>
+                Nuestro objetivo es ofrecer soluciones técnicas
+                adecuadas a las necesidades de cada proyecto.
+            </p>
+
+        </div>
 
     </section>
 
 
-    <!-- CONTACTO -->
-    <section class="contacto" id="contacto">
 
-        <h2>¿Necesitas un proyecto?</h2>
+    <!-- =========================
+         PROYECTOS
+    ========================= -->
+
+    <section id="proyectos">
+
+        <div class="titulo">
+
+            <h2>Proyectos</h2>
+
+            <p>
+                Algunos de nuestros trabajos y especialidades
+            </p>
+
+        </div>
+
+
+        <div class="proyectos">
+
+
+            <div class="proyecto">
+
+                <h3>
+                    ⚡ Proyectos Eléctricos
+                </h3>
+
+            </div>
+
+
+            <div class="proyecto">
+
+                <h3>
+                    💧 Proyectos Hidráulicos
+                </h3>
+
+            </div>
+
+
+            <div class="proyecto">
+
+                <h3>
+                    🚿 Proyectos Sanitarios
+                </h3>
+
+            </div>
+
+
+            <div class="proyecto">
+
+                <h3>
+                    ☀️ Sistemas Solares
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACTO
+    ========================= -->
+
+    <section id="contacto">
+
+        <h2>
+            ¿Necesitas un proyecto?
+        </h2>
 
         <p>
             Estamos listos para ayudarte.
         </p>
 
-        <a
-            href="https://www.facebook.com/riaggo.ingenieros"
-            target="_blank"
-            class="boton">
-            VISITAR FACEBOOK
-        </a>
+        <p>
+            Solicita información o una cotización.
+        </p>
+
+
+        <div class="contacto-botones">
+
+            <a
+                href="https://www.facebook.com/riaggo.ingenieros"
+                target="_blank"
+                class="boton"
+            >
+                VISITAR FACEBOOK
+            </a>
+
+        </div>
 
     </section>
 
 
-    <!-- PIE DE PAGINA -->
+
+    <!-- =========================
+         PIE DE PAGINA
+    ========================= -->
+
     <footer>
 
         <p>
-            © 2026 Riaggo Ingenieros. Todos los derechos reservados.
+            <strong>RIAGGO INGENIEROS</strong>
         </p>
 
         <p>
-            Proyectos Eléctricos · Hidráulicos · Sanitarios
+            Desarrollo de Proyectos Ejecutivos
+        </p>
+
+        <p>
+            Eléctricos · Hidráulicos · Sanitarios
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Riaggo Ingenieros.
+            Todos los derechos reservados.
         </p>
 
     </footer>
 
+
 </body>
+
 </html>
