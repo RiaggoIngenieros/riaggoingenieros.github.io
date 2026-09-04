@@ -277,19 +277,21 @@
             color: #123f8a;
         }
 
-        .proyecto {
-    overflow: hidden;
+   .proyecto {
+    overflow: visible;
+    display: flex;
     flex-direction: column;
     padding: 0;
+    height: auto;
 }
 
 .proyecto img {
     width: 100%;
     height: auto;
-    max-height: 650px;
-    object-fit: contain;
+    max-height: none;
+    object-fit: initial;
     display: block;
-    background: #ffffff;
+    margin: 0 auto;
 }
 
 .proyecto-info {
