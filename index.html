@@ -277,6 +277,32 @@
             color: #123f8a;
         }
 
+        .proyecto {
+    overflow: hidden;
+    flex-direction: column;
+    padding: 0;
+}
+
+.proyecto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.proyecto-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.proyecto-info h3 {
+    margin-bottom: 12px;
+}
+
+.proyecto-info p {
+    color: #555;
+    margin-bottom: 20px;
+}
 
         /* =========================
            CONTACTO
@@ -623,65 +649,59 @@
 
 
 
-    <!-- =========================
-         PROYECTOS
-    ========================= -->
+  <!-- =========================
+     PROYECTOS
+========================= -->
 
-    <section id="proyectos">
+<section id="proyectos">
 
-        <div class="titulo">
+    <div class="titulo">
 
-            <h2>Proyectos</h2>
+        <h2>Nuestros Proyectos</h2>
 
-            <p>
-                Algunos de nuestros trabajos y especialidades
-            </p>
+        <p>
+            Conoce algunas de nuestras especialidades y trabajos
+        </p>
+
+    </div>
+
+    <div class="proyectos">
+
+        <!-- PROYECTO GAS LP -->
+
+        <div class="proyecto">
+
+            <img
+                src="gas-lp-residencial.jpg"
+                alt="Instalación de Gas LP Residencial - Riaggo Ingenieros"
+            >
+
+            <div class="proyecto-info">
+
+                <h3>
+                    🔥 Instalación de Gas LP Residencial
+                </h3>
+
+                <p>
+                    Instalaciones de Gas LP residencial,
+                    realizadas con enfoque en seguridad,
+                    calidad y trabajo profesional.
+                </p>
+
+                <a
+                    href="#contacto"
+                    class="boton"
+                >
+                    SOLICITAR INFORMACIÓN
+                </a>
+
+            </div>
 
         </div>
 
+    </div>
 
-        <div class="proyectos">
-
-
-            <div class="proyecto">
-
-                <h3>
-                    ⚡ Proyectos Eléctricos
-                </h3>
-
-            </div>
-
-
-            <div class="proyecto">
-
-                <h3>
-                    💧 Proyectos Hidráulicos
-                </h3>
-
-            </div>
-
-
-            <div class="proyecto">
-
-                <h3>
-                    🚿 Proyectos Sanitarios
-                </h3>
-
-            </div>
-
-
-            <div class="proyecto">
-
-                <h3>
-                    ☀️ Sistemas Solares
-                </h3>
-
-            </div>
-
-
-        </div>
-
-    </section>
+</section>
 
 
 
