@@ -434,6 +434,26 @@
         .whatsapp-flotante:hover {
             transform: scale(1.1);
         }
+
+        .hero-botones {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .boton-secundario {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .boton-secundario:hover {
+            background: white;
+            color: #123f8a;
+        }
+
         
     </style>
 
@@ -481,7 +501,7 @@
 
         <div class="hero-contenido">
 
-            <h1>RIAGGO INGENIEROS</h1>
+            <!--h1>RIAGGO INGENIEROS</h1>
 
             <h2>
                 Desarrollo de Proyectos Ejecutivos
@@ -490,16 +510,50 @@
             <p>
                 Soluciones profesionales en ingeniería
                 eléctrica, hidráulica y sanitaria.
+            </p-->
+
+
+            <h1>RIAGGO INGENIEROS</h1>
+
+            <h2>Proyectos • Construcción • Instalaciones</h2>
+
+            <p>
+                Soluciones profesionales para proyectos
+                eléctricos, hidráulicos, sanitarios y de energía solar.
             </p>
 
+            <p>
+                Diseñamos, proyectamos e instalamos soluciones
+                para nuestros clientes.
+            </p>
+
+            <div class="hero-botones">
+
+                <a
+                    href="https://wa.me/529993447240?text=Hola%2C%20me%20interesa%20solicitar%20una%20cotización%20con%20Riaggo%20Ingenieros."
+                    target="_blank"
+                    class="boton"
+                >
+            SOLICITAR COTIZACIÓN
+            </a>
+
             <a
-                href="#contacto"
-                class="boton"
+                href="#servicios"
+                class="boton boton-secundario"
             >
-                SOLICITAR COTIZACIÓN
+            VER NUESTROS SERVICIOS
             </a>
 
         </div>
+
+         <a
+                href="#contacto"
+                class="boton"
+        >
+                SOLICITAR COTIZACIÓN
+        </a>
+
+    </div>
 
     </section>
 
