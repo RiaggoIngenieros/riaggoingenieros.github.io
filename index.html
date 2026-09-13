@@ -466,7 +466,61 @@
             color: #123f8a;
         }
 
-        
+        /* =========================
+       MEJORA GALERÍA DE PROYECTOS
+    ========================= */
+
+    .proyectos {
+        align-items: stretch;
+    }
+
+    .proyecto {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .proyecto img {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        object-fit: contain;
+        margin: 0 auto;
+        transition: transform 0.3s ease;
+    }
+
+    .proyecto:hover img {
+        transform: scale(1.04);
+    }
+
+    .proyecto-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    
+    .proyecto-info p {
+        flex: 1;
+    }
+    
+    .proyecto-info .boton {
+        margin-top: 15px;
+    }
+
+
+    /* =========================
+       GALERÍA EN CELULAR
+    ========================= */
+    
+    @media (max-width: 600px) {
+    
+        .proyecto img {
+            max-width: 300px;
+            height: 300px;
+        }
+    
+    }
     </style>
 
 </head>
