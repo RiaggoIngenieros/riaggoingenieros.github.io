@@ -197,7 +197,7 @@
             gap: 25px;
         }
 
-        .servicio {
+    /*    .servicio {
 
             background: white;
 
@@ -211,8 +211,29 @@
                 0 5px 20px rgba(0,0,0,0.08);
 
             transition: 0.3s;
+        }*/
+
+
+         .servicio {
+        
+            background: white;
+        
+            padding: 35px 25px;
+        
+            text-align: center;
+        
+            border-radius: 10px;
+        
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+        
+            transition: 0.3s;
+        
+            display: flex;
+            flex-direction: column;
         }
 
+        
         .servicio:hover {
             transform: translateY(-7px);
         }
@@ -228,8 +249,17 @@
             font-size: 21px;
         }
 
+    /*    .servicio p {
+            color: #555;
+        }*/
+
         .servicio p {
             color: #555;
+            flex-grow: 1;
+        }
+        
+        .servicio .boton {
+            margin-top: 20px;
         }
 
 
