@@ -823,8 +823,54 @@
 			    letter-spacing: 1px;
 			}
 		
-
-		
+				/* FLECHAS DE NAVEGACIÓN DE GALERÍAS */
+				
+				.lightbox .flecha {
+				    position: absolute;
+				    top: 50%;
+				    transform: translateY(-50%);
+				    background: rgba(0, 0, 0, 0.5);
+				    color: white;
+				    border: none;
+				    border-radius: 50%;
+				    width: 50px;
+				    height: 50px;
+				    font-size: 28px;
+				    cursor: pointer;
+				    z-index: 10000;
+				    transition: background 0.3s;
+				}
+				
+				.lightbox .anterior {
+				    left: 20px;
+				}
+				
+				.lightbox .siguiente {
+				    right: 20px;
+				}
+				
+				.lightbox .flecha:hover {
+				    background: #0056b3;
+				}
+				
+				/* ADAPTACIÓN PARA CELULARES */
+				
+				@media (max-width: 768px) {
+				    .lightbox .flecha {
+				        width: 35px;
+				        height: 35px;
+				        font-size: 20px;
+				    }
+				
+				    .lightbox .anterior {
+				        left: 5px;
+				    }
+				
+				    .lightbox .siguiente {
+				        right: 5px;
+				    }
+				}
+						
     </style>
 
 </head>
@@ -1772,6 +1818,17 @@
         onclick="cerrarImagen()">&times;</button>
 
     <img id="imagen-ampliada" src="" alt="Fotografía ampliada">
+
+	<!-- FLECHAS DE NAVEGACIÓN -->
+
+	<button class="flecha anterior"
+    aria-label="Fotografía anterior"
+    onclick="cambiarFoto(-1)">&#10094;</button>
+
+	<button class="flecha siguiente"
+    aria-label="Fotografía siguiente"
+    onclick="cambiarFoto(1)">&#10095;</button>
+	
 	<div id="contador-fotos" class="contador-fotos"></div>
 
 </div>
@@ -1787,7 +1844,7 @@
     document.body.style.overflow = "hidden";
 }*/
 
-function abrirImagen(imagen) {
+/*function abrirImagen(imagen) {
 
     const galeria = imagen.closest(".proyecto-galeria");
 
@@ -1805,7 +1862,62 @@ function abrirImagen(imagen) {
     document.getElementById("lightbox").style.display = "flex";
 
     document.body.style.overflow = "hidden";
+}*/
+
+/* NAVEGACIÓN DE FOTOGRAFÍAS */
+
+let fotosGaleria = [];
+let fotoActual = 0;
+
+/* ABRIR FOTOGRAFÍA */
+
+function abrirImagen(imagen) {
+
+    const galeria = imagen.closest(".proyecto-galeria");
+
+    fotosGaleria = galeria
+        ? Array.from(galeria.querySelectorAll("img"))
+        : [imagen];
+
+    fotoActual = fotosGaleria.indexOf(imagen);
+
+    mostrarFoto();
+
+    document.getElementById("lightbox").style.display = "flex";
+
+    document.body.style.overflow = "hidden";
 }
+
+/* MOSTRAR FOTOGRAFÍA Y CONTADOR */
+
+function mostrarFoto() {
+
+    document.getElementById("imagen-ampliada").src =
+        fotosGaleria[fotoActual].src;
+
+    document.getElementById("contador-fotos").textContent =
+        (fotoActual + 1) + " de " + fotosGaleria.length;
+}
+
+/* AVANZAR Y RETROCEDER */
+
+function cambiarFoto(direccion) {
+
+    if (fotosGaleria.length === 0) return;
+
+    fotoActual += direccion;
+
+    if (fotoActual >= fotosGaleria.length) {
+        fotoActual = 0;
+    }
+
+    if (fotoActual < 0) {
+        fotoActual = fotosGaleria.length - 1;
+    }
+
+    mostrarFoto();
+}
+	
 	
 /* CERRAR FOTOGRAFÍA */
 
