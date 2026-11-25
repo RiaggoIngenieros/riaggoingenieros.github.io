@@ -808,6 +808,22 @@
     		cursor: zoom-in !important;
 		}
 
+		/* CONTADOR DE FOTOGRAFÍAS */
+
+			.lightbox {
+			    flex-direction: column;
+			}
+			
+			.contador-fotos {
+			    color: white;
+			    font-size: 18px;
+			    font-weight: bold;
+			    text-align: center;
+			    margin-top: 15px;
+			    letter-spacing: 1px;
+			}
+		
+
 		
     </style>
 
@@ -1756,6 +1772,7 @@
         onclick="cerrarImagen()">&times;</button>
 
     <img id="imagen-ampliada" src="" alt="Fotografía ampliada">
+	<div id="contador-fotos" class="contador-fotos"></div>
 
 </div>
 
@@ -1764,12 +1781,32 @@
 
 /* ABRIR FOTOGRAFÍA */
 
-function abrirImagen(imagen) {
+/*function abrirImagen(imagen) {
     document.getElementById("imagen-ampliada").src = imagen.src;
     document.getElementById("lightbox").style.display = "flex";
     document.body.style.overflow = "hidden";
-}
+}*/
 
+function abrirImagen(imagen) {
+
+    const galeria = imagen.closest(".proyecto-galeria");
+
+    const fotos = galeria
+        ? Array.from(galeria.querySelectorAll("img"))
+        : [imagen];
+
+    const posicion = fotos.indexOf(imagen) + 1;
+
+    document.getElementById("imagen-ampliada").src = imagen.src;
+
+    document.getElementById("contador-fotos").textContent =
+        posicion + " de " + fotos.length;
+
+    document.getElementById("lightbox").style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+	
 /* CERRAR FOTOGRAFÍA */
 
 function cerrarImagen() {
