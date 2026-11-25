@@ -768,6 +768,25 @@
 		    box-sizing: border-box;
 		}
 
+		.lightbox img {
+		    max-width: 90%;
+		    max-height: 85vh;
+		    width: auto;
+		    height: auto;
+		    object-fit: contain;
+		    border-radius: 8px;
+		}
+		
+		.lightbox .cerrar {
+		    position: absolute;
+		    top: 20px;
+		    right: 30px;
+		    color: white;
+		    background: transparent;
+		    border: none;
+		    font-size: 45px;
+		    cursor: pointer;
+		}
 		
     </style>
 
@@ -1189,10 +1208,10 @@
             >
 
 			<div class="proyecto-galeria">
-    		<img src="paneles-solares-instalacion-01.png" alt="Instalación de paneles solares">
-    		<img src="paneles-solares-paneles-02.png" alt="Paneles solares instalados">
-    		<img src="paneles-solares-estructura-03.png" alt="Estructura de paneles solares">
-    		<img src="paneles-solares-conexiones-04.png" alt="Conexiones de paneles solares">
+    		<img src="paneles-solares-instalacion-01.png" alt="Instalación de paneles solares" onclick="abrirImagen(this)">
+    		<img src="paneles-solares-paneles-02.png" alt="Paneles solares instalados" onclick="abrirImagen(this)">
+    		<img src="paneles-solares-estructura-03.png" alt="Estructura de paneles solares" onclick="abrirImagen(this)">
+    		<img src="paneles-solares-conexiones-04.png" alt="Conexiones de paneles solares" onclick="abrirImagen(this)">
     		<!--div class="espacio-foto">Foto 5</div-->
 			</div>
 			
@@ -1705,6 +1724,56 @@
 
     </a>
 
+
+	
+<!-- VISOR DE FOTOGRAFÍAS -->
+
+<div id="lightbox" class="lightbox">
+
+    <button class="cerrar" aria-label="Cerrar imagen"
+        onclick="cerrarImagen()">&times;</button>
+
+    <img id="imagen-ampliada" src="" alt="Fotografía ampliada">
+
+</div>
+
+
+<script>
+
+/* ABRIR FOTOGRAFÍA */
+
+function abrirImagen(imagen) {
+    document.getElementById("imagen-ampliada").src = imagen.src;
+    document.getElementById("lightbox").style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+/* CERRAR FOTOGRAFÍA */
+
+function cerrarImagen() {
+    document.getElementById("lightbox").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+/* CERRAR AL HACER CLIC EN EL FONDO */
+
+document.getElementById("lightbox").addEventListener("click", function(evento) {
+    if (evento.target === this) {
+        cerrarImagen();
+    }
+});
+
+/* CERRAR CON LA TECLA ESC */
+
+document.addEventListener("keydown", function(evento) {
+    if (evento.key === "Escape") {
+        cerrarImagen();
+    }
+});
+
+</script>
+	
+	
 </body>
 
 </html>
