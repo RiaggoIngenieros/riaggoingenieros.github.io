@@ -376,7 +376,18 @@
     align-items: stretch;
 }		
 
-.proyecto-galeria img {
+/*.proyecto-galeria img {
+    width: 100%;
+    height: 150px;
+    max-width: none;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}*/
+
+.proyecto .proyecto-galeria img {
     width: 100%;
     height: 150px;
     max-width: none;
@@ -387,9 +398,13 @@
     transition: transform 0.2s;
 }
 
-.proyecto-galeria img:hover {
+.proyecto .proyecto-galeria img:hover {
     transform: scale(1.03);
-}
+}		
+		
+/*.proyecto-galeria img:hover {
+    transform: scale(1.03);
+}*/
 
 /* Adaptación para celulares */
 @media (max-width: 480px) {
