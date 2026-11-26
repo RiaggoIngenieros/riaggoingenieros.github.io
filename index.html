@@ -1021,13 +1021,46 @@
 		    }
 		}
 		
-		@media (max-width: 480px) {
+	/*	@media (max-width: 480px) {
 		
 		    .contacto-grid {
 		        grid-template-columns: 1fr;
 		    }
-		}
+		}*/
 
+
+		/* CONTACTO EN CELULARES */
+
+		@media (max-width: 480px) {
+		
+		    .contacto-grid {
+		        grid-template-columns: repeat(2, minmax(0, 1fr));
+		        gap: 12px;
+		    }
+		
+		    .contacto-card {
+		        padding: 20px 10px;
+		    }
+		
+		    .contacto-card h3 {
+		        font-size: 17px;
+		    }
+		
+		    .contacto-card p {
+		        font-size: 12px;
+		    }
+		
+		    .contacto-card .contacto-red {
+		        width: 50px;
+		        height: 50px;
+		        font-size: 27px;
+		        margin-bottom: 10px;
+		    }
+		
+		    .contacto-grid > .contacto-card:last-child {
+		        grid-column: 1 / -1;
+		    }
+		}
 		
     </style>
 
