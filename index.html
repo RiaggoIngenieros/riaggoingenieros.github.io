@@ -1061,6 +1061,31 @@
 		        grid-column: 1 / -1;
 		    }
 		}
+
+
+		/* AJUSTE DEL BOTÓN FLOTANTE WHATSAPP */
+
+			.whatsapp-flotante i {
+			    font-size: 35px;
+			    color: white;
+			}
+			
+			/* WHATSAPP EN CELULARES */
+			
+			@media (max-width: 480px) {
+			
+			    .whatsapp-flotante {
+			        width: 48px;
+			        height: 48px;
+			        right: 12px;
+			        bottom: 12px;
+			    }
+			
+			    .whatsapp-flotante i {
+			        font-size: 28px;
+			    }
+			}
+
 		
     </style>
 
@@ -2199,7 +2224,9 @@
    target="_blank"
    aria-label="Contactar por WhatsApp">
 
-        <span>💬</span>
+        <!--span>💬</span-->
+
+		<i class="fa-brands fa-whatsapp"></i>
 
     </a>
 
