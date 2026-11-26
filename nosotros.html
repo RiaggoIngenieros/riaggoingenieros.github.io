@@ -387,6 +387,51 @@
                 scroll-margin-top: 200px;
             }
         }
+
+        /* BOTÓN FLOTANTE DE WHATSAPP */
+
+        .whatsapp-flotante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-flotante i {
+            font-size: 35px;
+        }
+        
+        .whatsapp-flotante:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        /* WHATSAPP FLOTANTE EN CELULARES */
+        
+        @media (max-width: 480px) {
+        
+            .whatsapp-flotante {
+                width: 48px;
+                height: 48px;
+                right: 12px;
+                bottom: 12px;
+            }
+        
+            .whatsapp-flotante i {
+                font-size: 28px;
+            }
+        }
         
     </style>
 
@@ -650,5 +695,22 @@
         <p>© 2026 Riaggo Ingenieros. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+
+    <a href="https://wa.me/529993447240"
+       class="whatsapp-flotante"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contáctanos por WhatsApp"
+       title="Contáctanos por WhatsApp">
+    
+        <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
 </body>
+
+
+    
+    
 </html>
