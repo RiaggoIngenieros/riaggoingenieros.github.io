@@ -926,7 +926,53 @@
 			.contacto-red.ubicacion {
 			    cursor: default;
 			}	
-						
+
+			/* ICONOS DE REDES SOCIALES DEL MENÚ */
+
+		nav a.menu-red {
+		    display: inline-flex;
+		    align-items: center;
+		    justify-content: center;
+		    width: 35px;
+		    height: 35px;
+		    border-radius: 50%;
+		    color: white;
+		    font-size: 20px;
+		    text-decoration: none;
+		    flex-shrink: 0;
+		    transition: transform 0.3s, box-shadow 0.3s;
+		}
+		
+		/* INSTAGRAM */
+		
+		nav a.menu-red.instagram {
+		    background: linear-gradient(
+		        45deg, #FEDA75, #FA7E1E,
+		        #D62976, #962FBF, #4F5BD5
+		    );
+		}
+		
+		/* TIKTOK */
+		
+		nav a.menu-red.tiktok {
+		    background: #000000;
+		}
+		
+		/* FACEBOOK */
+		
+		nav a.menu-red.facebook {
+		    background: #1877F2;
+		}
+		
+		/* EFECTO AL PASAR EL CURSOR */
+		
+		nav a.menu-red:hover {
+		    transform: scale(1.15);
+		    color: white;
+		    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+		}
+
+		
     </style>
 
 	<!-- ICONOS DE REDES SOCIALES -->
@@ -952,7 +998,7 @@
             class="logo"
         >
 
-        <nav>
+        <!--nav>
 
             <a href="#inicio">Inicio</a>
 
@@ -962,7 +1008,7 @@
 
             <!--a href="#nosotros">Nosotros</a-->
 
-            <a href="#proyectos">Proyectos</a>
+            <!--a href="#proyectos">Proyectos</a>
 
             <a href="#contacto">Contacto</a>
 
@@ -973,7 +1019,64 @@
 			<a href="https://www.facebook.com/riaggo.ingenieros" target="_blank" rel="noopener noreferrer">Síguenos en Facebook</a>
 
            
-        </nav>
+	</nav-->
+
+			<nav>
+
+			    <a href="#inicio">Inicio</a>
+			
+			    <a href="#servicios">Servicios</a>
+			
+			    <a href="nosotros.html">Nosotros</a>
+			
+			    <a href="#proyectos">Proyectos</a>
+			
+			    <a href="#contacto">Contacto</a>
+			
+			
+			    <!-- INSTAGRAM -->
+			
+			    <a href="https://www.instagram.com/riaggo.ingenieros/"
+			       target="_blank"
+			       rel="noopener noreferrer"
+			       class="menu-red instagram"
+			       aria-label="Instagram"
+			       title="Síguenos en Instagram">
+			
+			        <i class="fa-brands fa-instagram"></i>
+			
+			    </a>
+			
+			
+			    <!-- TIKTOK -->
+			
+			    <a href="https://www.tiktok.com/@riaggo.ingenieros"
+			       target="_blank"
+			       rel="noopener noreferrer"
+			       class="menu-red tiktok"
+			       aria-label="TikTok"
+			       title="Síguenos en TikTok">
+			
+			        <i class="fa-brands fa-tiktok"></i>
+			
+			    </a>
+			
+			
+			    <!-- FACEBOOK -->
+			
+			    <a href="https://www.facebook.com/riaggo.ingenieros"
+			       target="_blank"
+			       rel="noopener noreferrer"
+			       class="menu-red facebook"
+			       aria-label="Facebook"
+			       title="Síguenos en Facebook">
+			
+			        <i class="fa-brands fa-facebook-f"></i>
+			
+			    </a>
+			
+			</nav>
+		
 
     </header>
 
